@@ -1,0 +1,36 @@
+//PARES CLAVES VALOR
+"Nombre" : "Kelly",
+"Edad": 32,
+"Direccion": "direccion 1"
+//#ARRAY
+
+"Nombre" : "Kelly",
+"Edad": 32,
+"Direccion": ["direccion 1"," Direccion2"]
+//#MATRIzES EN JSON
+
+
+{
+  "Nombre" : "Kelly",
+  "Edad": 32,
+  "Direccion": ["direccion 1"," Direccion2"]
+  "Nacionalidad":[
+  {
+    "Pais": "India",
+    "Data": {
+      "Capital":"New Delhi"
+      "Altitud": 323
+      "Longitud": 562
+            }
+  },
+  {
+    "Pais": "Bolivia",
+    "Data": {
+      "Capital":"La Paz"
+      "Altitud": 323
+      "Longitud": 562
+}
+},
+]
+}
+
