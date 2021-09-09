@@ -5,6 +5,8 @@ import io.restassured.RestAssured;
 import io.restassured.response.ValidatableResponse;
 import org.testng.annotations.Test;
 
+import static io.restassured.RestAssured.config;
+import static io.restassured.config.LogConfig.logConfig;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.*;
@@ -23,53 +25,19 @@ public class SWApiTestWithRestAssured {
 //                .then()
 //                .log().all()
 //                .and().assertThat().statusCode(is(equalTo(200)));
-        BaseApiResponse baseApiResponse = RestAssured
-       // String body = RestAssured
-                .given()
-                .baseUri("https://swapi.dev/api" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "" +
-                        "")
-                .and()
-                .queryParam("format", "json")
-                .when()
-                .get("/")
-                .then()
-                .log().all()
-                .and().assertThat().statusCode(is(equalTo(200)))
-                .and()
-                .body("films", response -> notNullValue())
-                .body("vehicles", response -> notNullValue())
-                .body("people", response -> notNullValue())
-                .body("starships", response -> notNullValue())
-                .body("species", response -> notNullValue())
-                //.and().extract().body().asString();
-                .and().extract().body().as(BaseApiResponse.class);
+
 
         RestAssured
                 .given()
                 .queryParam("format", "json")
-                .log().all()
+                .config(config().logConfig(logConfig().enableLoggingOfRequestAndResponseIfValidationFails()))
                 .when()
-                .post(baseApiResponse.getFilms())
+                .get("https://swapi.dev/api")
                 .then()
-                .log().all()
-                .and()
                 .assertThat()
-                .statusCode(is(equalTo(405)));
+                .statusCode(is(equalTo(200)));
 
 
     }
-
-
 
 }
