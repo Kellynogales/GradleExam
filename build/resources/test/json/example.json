@@ -1,0 +1,12 @@
+
+
+{
+  "Nombre" : "Kelly",
+  "Apellido": "Nogales",
+  "Edad": 32,
+  "Profesion": "Ingenieria de Sistemas\n",
+  "Direccion": "direccion 1",
+  "Color": "#FFFFFFF",
+  "casado" : true
+}
+

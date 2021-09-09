@@ -1,0 +1,4 @@
+com/examples/bind/BaseApiResponse.java
+ com.examples.bind.BaseApiResponse
+com/examples/SWApiTestWithRestAssured.java
+ com.examples.SWApiTestWithRestAssured
